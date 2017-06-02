@@ -1,0 +1,58 @@
+/* page/tool/ups_cal/index.wxss */
+
+.table, .th, .tr{
+  border: 1px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2rem;
+  align-items: center;
+}
+.th {
+  width: 100%;
+  justify-content: center;
+  background: #E6F3F9;
+  color: #000;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+.bg-w {
+  background: #3366FF;
+}
+.tr-angle {
+  height: 2rem;
+}
+.th-angle {
+  height: 2rem;
+  text-align: center;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+.more {
+  width: 1rem;
+  height: 0.5rem;
+}
+
+.upcd {
+  display: block;
+  width: 90%;
+  font-size: 14px;
+  color: #696969;
+  padding-left: 1rem;
+  line-height: 1.8;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.upctit {
+  argin-top: 15px;
+  text-align: center;
+  font-size: 24px;
+  color: #0067cd;
+  margin-bottom: 15px;
+}

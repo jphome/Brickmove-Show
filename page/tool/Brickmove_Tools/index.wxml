@@ -1,0 +1,52 @@
+<!--page/tool/Brickmove_Tools/index.wxml-->
+<import src="../../common/head.wxml" />
+
+<view class="container">
+	<template is="head" data="{{title: '板砖工具.exe', desc: '初衷：做包工头期间，缺乏轻量级的实用工具软件，大大影响了工程施工效率'}}"/>
+
+	<view class="page-body">
+		<view class="page-section page-section-gap">
+			<view class="weui-cells__title">主体实用功能</view>
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell" style="word-break:break-all; font-size:0.8rem">
+					<text>{{func_text}}</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="page-section page-section-gap">
+			<view class="weui-cells__title">下载地址</view>
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell" style="word-break:break-all; font-size:0.8rem">
+					<text>至公众号“天王盖地虎”，发送“板砖神器”即可获得工具下载链接。</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="page-section page-section-gap">
+			<view class="weui-cells__title">说明</view>
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell" style="word-break:break-all; font-size:0.8rem">
+					<text>{{desc_text}}</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="page-section page-section-gap">
+			<view class="weui-cells__title">技术列表</view>
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell" style="word-break:break-all; font-size:0.8rem">
+					<text>{{tech_text}}</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="page-section page-section-gap">
+			<view class="weui-cells__title">软件界面</view>
+			<view class="weui-cells weui-cells_after-title" style="width:100%;">
+				<image class="weui-cell" mode="widthFix" style="width:90%;" src="../resources/bmtool1.jpg" />
+				<image class="weui-cell" mode="widthFix" style="width:90%;" src="../resources/bmtool2.jpg" />
+			</view>
+		</view>
+	</view>
+</view>

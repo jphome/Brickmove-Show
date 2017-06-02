@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="page">
+	<view class="page__hd">
+		<view class="page__title">总结</view>
+		<view class="page__desc">一年包工头生活，25+城市留下了我的足迹。或许，这就是生命宽度的其中一个维度吧</view>
+	</view>
+	<view class="page__bd">
+		<view class="weui-article">
+			<view class="weui-article__h1">项目汇总</view>
+			<view class="weui-article__section">
+                <view class="weui-article__h3">监控新建项目</view>
+                <view class="weui-article__p">成功实施并验收分属以下行业的23个新项目，共计部署3600+路视频（快递2个、物流19个、仓储1个、小作坊1个）</view>
+                <view class="weui-article__h3">监控维护项目</view>
+                <view class="weui-article__p">顺利维护4个快递行业老工程项目，共计2500+路视频</view>
+            </view>
+        </view>
+		<image style="width: 100%;" mode="widthFix" src="./resources/resume.jpg"/>
+	</view>
+</view>

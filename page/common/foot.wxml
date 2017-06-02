@@ -1,0 +1,8 @@
+<template name="foot">
+	<view class="weui-footer">
+		<view class="weui-footer__links">
+			<navigator class="weui-footer__link" openType="switchTab" url="/page/proj/index" hover-class="none">返回首页</navigator>
+		</view>
+		<view class="weui-footer__text">© JPH 2017</view>
+	</view>
+</template>

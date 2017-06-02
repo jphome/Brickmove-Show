@@ -1,0 +1,48 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+
+<view class="lock-box" style="display: {{unlockSucc?'none':'block'}}">
+	<view  class="lock-title">涉及甲方敏感信息，手势密码验证后查看</view>
+	<view  class="lock-title" style="top: 120rpx">提示：手势密码与项目NVR密码一致</view>
+    <canvas disable-scroll="true" class="lock-cav" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" canvas-id="locker" style="width:100%;height:100%;"></canvas>
+</view>
+
+<view class="container" style="display: {{unlockSucc?'block':'none'}}">
+  <!-- <template is="head" data="{{title: 'xx'}}"/> -->
+
+  <view class="page-body">
+    <view class="page-section">
+	  <view class="weui-cells__title">地理位置信息</view>
+	  <view class="weui-media-box weui-media-box_appmsg">
+		<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+			<image class="weui-media-box__thumb" src="../resources/map.png"  bindtap="openLocation" data-name="{{detail[city][index].name}}" data-address="{{detail[city][index].address}}" data-longitude="{{detail[city][index].longitude}}" data-latitude="{{detail[city][index].latitude}}"/>
+		</view>
+		<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+			<view class="weui-media-box__title">{{detail[city][index].name}}</view>
+			<view class="weui-media-box__desc">{{detail[city][index].address}}</view>
+		</view>
+	  </view>
+    </view>
+	
+	<view class="page-section">
+	<view class="weui-cells__title">干系人信息</view>
+	<view class="table">
+	  <view class="tr bg-w">
+	    <view class="th" style="width:12rem;">类别</view>
+		  <view class="th" style="width:12rem;">姓名</view>
+		  <view class="th">联系方式</view>
+	  </view>
+	  <view class="tr bg-g" wx:for-items="{{detail[city][index].relative}}" wx:for-item="ren" wx:key="*item">
+		  <view class="td" style="width:12rem;">{{ren[0]}}</view>
+		  <view class="td" style="width:12rem;">{{ren[1]}}</view>
+		  <view class="td phone" bindtap="makePhoneCall" data-num="{{ren[2]}}">
+			<image wx:if="{{ren[2]}}" class="phone_ico" src="../resources/phone.png"></image>
+			{{ren[2]}}
+		  </view>
+	  </view>
+	</view>
+	</view>
+  </view>
+
+  <template is="foot" />
+</view>

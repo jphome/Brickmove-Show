@@ -1,0 +1,68 @@
+/* page/tool/storage_cal/index.wxss */
+
+.custom-xnumber .wux-number-input {
+	width: 60px;
+}
+label {
+	display: inline-block;
+	min-width: 170rpx;
+	margin-right: 20rpx;
+}
+form {
+	width: 100%;
+}
+
+.table, .th, .tr{
+  border: 1px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1rem;
+  align-items: center;
+}
+.td {
+    width:100%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w {
+  background: snow;
+}
+.bg-g {
+  background: #E6F3F9;
+}
+.th {
+  width: 100%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 1rem;
+  align-items: center;
+}
+
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.result {
+  border:1px solid orange;
+  background-color: #EEEEEE;
+}

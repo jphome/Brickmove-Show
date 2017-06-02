@@ -1,0 +1,84 @@
+<!--page/tool/ups_cal/index.wxml-->
+<import src="../../common/head.wxml" />
+<import src="../../../components/dialog/dialog.wxml"/>
+
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
+
+<view class="container">
+	<template is="head" data="{{title: 'UPS计算', desc: '在监控方案设计过程中ups不可或缺，那么，如何设计ups系统呢？'}}"/>
+
+	<view class="page-body">
+		<view class="page-section page-section-gap" style="font-size:1rem">
+			<view class="weui-cells__title">UPS系统选配表</view>
+			<view class="weui-cells weui-cells_after-title">
+<!-- 				<view class="weui-cell weui-cell_radio">
+					<view class="weui-cell__hd">
+						<view class="weui-label">UPS选型	</view>
+					</view>
+					<radio-group name="sensor_area">
+						<label class="radio">
+							<radio value="r1" checked="true"/>某品牌
+						</label>
+						<label class="radio">
+							<radio value="r2" checked=""/>某某品牌
+						</label>
+					</radio-group>
+				</view> -->
+				<view class="weui-cell weui-cell_input">
+					<view class="weui-cell__hd">
+						<view class="weui-label">后备时间</view>
+					</view>
+					<view class="weui-cell__bd">
+						<picker mode="time" value="{{time}}" start="00:30" end="10:00" bindchange="bindTimeChange">
+							<view class="weui-input">{{time}}</view>
+						</picker>
+					</view>
+				</view>
+			</view>
+			
+			<view class="table">
+				<view class="tr">
+					<view class="th bg-w">UPS功率因素：65%</view>
+				</view>
+				<view class="tr">
+					<view class="th" style="width:26rem;">总功率(瓦)</view>
+					<view class="th">立式</view>
+					<view class="th">机架式</view>
+				</view>
+				<view class="tr" wx:for-items="{{power_list}}" wx:for-item="power" wx:for-index="index" wx:key="*item">
+					<view class="th" style="width:26rem;">{{power}}</view>
+					<view class="th">
+						<image class="icon" src="../resources/ups-1.png" bindtap="choose_power" data-index="{{index}}" data-type="1"></image>
+					</view>
+					<view class="th">
+						<image class="icon" src="../resources/ups-2.png" bindtap="choose_power" data-index="{{index}}" data-type="2"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<modal 
+	hidden="{{hiddenModal}}"
+	no-cancel
+	bindconfirm="listenerConfirm"
+	confirmText="阅">
+
+	<view class="">
+		<view style="display:flex; justify-content:center;">
+			<image src="{{img_url}}" style="width:10rem; height:10rem;"></image>
+		</view>
+		<view class="upctit">{{ups_capa}}</view>
+		<view class="upcd">
+			<view>提醒：计算结果仅供参考</view>
+			<view>蓄电池安时数：{{ups_batt_type}}（AH）</view>
+			<view>电池每组节数：{{ups_bnum_perteam}}（节）</view>
+			<view>所需电池组数：{{ups_team_num}}（组）</view>
+			<view>所需电池总数：{{ups_bnum_perteam * ups_team_num}}（节）</view>
+			<!-- <view>使用的UPS总功率的%：</view>
+			<progress percent="{{ups_ratio}}" show-info active stroke-width="6" /> -->
+		</view>
+	</view>
+</modal>

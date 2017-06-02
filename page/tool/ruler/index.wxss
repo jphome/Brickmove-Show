@@ -1,0 +1,10 @@
+/* page/tool/ruler/index.wxss */
+
+.ruler-cav {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    z-index: 5;
+    background-color: #fff;
+}

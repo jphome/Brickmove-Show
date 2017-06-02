@@ -1,0 +1,14 @@
+<view class="page-content">
+	<view class="page-body" style="padding:0px 0;">
+		<view class="grids grids-big">
+			<block wx:for="{{ tools }}" wx:key="">
+				<navigator url="{{ item.url }}" class="grid">
+					<view class="grid_icon">
+						<image class="grid_img" src="{{ item.icon }}" alt=""/>
+					</view>
+					<view class="grid_label">{{ item.remark }}</view>
+				</navigator>
+			</block>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,108 @@
+<!--page/tool/focal_length/index.wxml-->
+
+<import src="../../../components/xnumber/xnumber.wxml"/>
+
+<view class="container">
+	<view class="page-body">
+		<view class="weui-tab">
+			<view class="weui-navbar">
+				<block wx:for-items="{{ tabs }}" wx:key="{{ index }}">
+					<view id="{{ index }}" class="weui-navbar__item {{ activeIndex == index ? 'weui-bar__item_on' : '' }}" bindtap="tabClick">
+						<view class="weui-navbar__title">
+							<image class="icon" src="../resources/{{index==1?'distance.png':'focal.png'}}"></image>
+							{{ item }}
+						</view>
+					</view>
+				</block>
+				<view class="weui-navbar__slider" style="left: {{ sliderLeft }}px; transform: translateX({{ sliderOffset }}px); -webkit-transform: translateX({{ sliderOffset }}px);"></view>
+			</view>
+		</view>
+
+	<view class="weui-tab__panel">
+		<view class="weui-tab__content">
+		  <form catchsubmit="formSubmit" catchreset="formReset">
+			<view class="page-section">
+
+				<view class="page-section page-section-gap">
+					<text>CMOS/CCD靶面规格：</text>
+					<radio-group name="sensor_area">
+						<label class="radio">
+							<radio value="r1" checked="true"/>1/3
+						</label>
+						<label class="radio">
+							<radio value="r2" checked=""/>1/2
+						</label>
+						<label class="radio">
+							<radio value="r3" checked=""/>2/3
+						</label>
+						<label class="radio">
+							<radio value="r4" checked=""/>1
+						</label>
+					</radio-group>
+				</view>
+				
+				<view class="page-section page-section-gap">
+					<view class="weui-cells weui-cells_after-title">
+						<view class="weui-cell">
+							<view class="weui-cell__hd">被摄物：</view>
+							<view class="weui-cell__bd" middle>
+								<text>{{length_unit}}</text>
+								<switch checked name="length_or_wide" bindchange="switchChange"/>
+								<text>（宽/高）</text>
+								<template is="xnumber" data="{{ ...$wux.xnumber.size }}"/>
+							</view>
+							<view class="weui-cell__ft">
+								<text>米</text>
+							</view>
+						</view>
+					</view>
+				</view>
+				
+				<view class="page-section page-section-gap" hidden="{{activeIndex != 0}}">
+					<view class="weui-cells weui-cells_after-title">
+						<view class="weui-cell">
+							<view class="weui-cell__hd">物镜距离：</view>
+							<view class="weui-cell__bd">
+								<template is="xnumber" data="{{ ...$wux.xnumber.distance }}"/>
+							</view>
+							<view class="weui-cell__ft">
+								<text>米</text>
+							</view>
+						</view>
+					</view>
+				</view>
+
+				<view class="page-section page-section-gap" hidden="{{activeIndex != 1}}">
+					<view class="weui-cells weui-cells_after-title">
+						<view class="weui-cell">
+							<view class="weui-cell__hd">镜头焦距：</view>
+							<view class="weui-cell__bd">
+								<template is="xnumber" data="{{ ...$wux.xnumber.focal }}"/>
+							</view>
+							<view class="weui-cell__ft">
+								<text>米</text>
+							</view>
+						</view>
+					</view>
+				</view>
+
+				<view class="page-section page-section-gap">
+					<view class="button-sp-area">
+						<button class="mini-btn" type="primary" size="mini" formType="submit">计算</button>
+						<button class="mini-btn" type="default" size="mini" formType="reset">重置</button>
+					</view>
+				</view>
+
+			</view>
+		  </form>
+
+		  
+		</view>
+	</view>
+	<view class="page-section result" hidden="{{result_show}}">
+		<view>提醒：计算结果仅供参考</view>
+		<text>{{result}}</text>
+	</view>
+
+	</view>
+</view>

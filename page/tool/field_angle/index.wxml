@@ -1,0 +1,66 @@
+<!--page/tool/field_angle/index.wxml-->
+<import src="../../common/head.wxml" />
+
+<view class="container">
+	<template is="head" data="{{title: '视场角', desc: '初衷：现场勘查做方案设计时对不同毫米数摄像头的视场角有个更直观的感觉，配合上一页“焦距”工具服用'}}"/>
+
+	<view class="page-body">
+		<view class="page-section page-section-gap" style="font-size:0.7rem">
+			<view class="weui-cells__title">镜头选配表</view>
+			<view class="table">
+				<view class="tr">
+					<view class="th bg-w">1.3MP/960P海康2T/3T摄像头</view>
+				</view>
+				<view class="tr">
+					<view class="th">毫米数</view>
+					<view class="th">4mm</view>
+					<view class="th">6mm</view>
+					<view class="th">8mm</view>
+					<view class="th">12mm</view>
+					<view class="th">16mm</view>
+				</view>
+				<view class="tr">
+					<view class="th">监控角度</view>
+					<view class="th">73.1°</view>
+					<view class="th">46°</view>
+					<view class="th">35.5°</view>
+					<view class="th">22°</view>
+					<view class="th">15°</view>
+				</view>
+				<view class="tr">
+					<view class="th">监控距离</view>
+					<view class="th">6m内</view>
+					<view class="th">10m左右</view>
+					<view class="th">20m左右</view>
+					<view class="th">35m左右</view>
+					<view class="th">50m左右</view>
+				</view>
+				<view class="tr tr-angle">
+					<view class="th th-angle">点击查看直观图</view>
+					<view class="th th-angle" wx:for-items="{{angles}}" wx:for-item="angle" wx:key="*item">
+						<navigator url="/page/tool/field_angle/view_angle/index?angle={{angle}}" type="primary">
+							<image class="icon" src="../resources/angle.png"></image>
+						</navigator>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="page-section page-section-gap">
+			<view class="weui-cells__title">其他角度</view>
+			<view class="weui-cells weui-cells_after-title">
+				<view class="weui-cell">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">角度：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" bindinput="input_angle" placeholder="输入角度值" />
+	                </view>
+	                <view class="weui-cell__ft">
+	                    <view class="weui-vcode-btn"><navigator url="/page/tool/field_angle/view_angle/index?angle={{angle}}">查看</navigator></view>
+	                </view>
+                </view>
+            </view>
+		</view>
+	</view>
+</view>

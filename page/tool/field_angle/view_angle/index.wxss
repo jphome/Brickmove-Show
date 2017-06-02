@@ -1,0 +1,10 @@
+/* page/tool/field_angle/view_angle/index.wxss */
+
+.angle-cav {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    z-index: 5;
+    background-color: #000;
+}

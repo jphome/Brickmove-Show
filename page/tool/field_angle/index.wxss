@@ -1,0 +1,36 @@
+/* page/tool/field_angle/index.wxss */
+
+.table, .th, .tr{
+  border: 1px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1rem;
+  align-items: center;
+}
+.th {
+  width: 100%;
+  justify-content: center;
+  background: #E6F3F9;
+  color: #000;
+  display: flex;
+  height: 1rem;
+  align-items: center;
+}
+.bg-w {
+  background: #3366FF;
+}
+.tr-angle {
+  height: 2rem;
+}
+.th-angle {
+  height: 2rem;
+  text-align: center;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}

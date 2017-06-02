@@ -1,0 +1,75 @@
+@import "../../common/lib/weui.wxss";
+@import "../../common/index.wxss";
+
+.picker{
+  padding: 19rpx 26rpx;
+  background-color: #FFFFFF;
+}
+
+.table, .th, .tr{
+  border: 1px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2rem;
+  align-items: center;
+}
+.td {
+    width: 100%;
+    justify-content: center;
+    text-align: left;
+}
+.bg-w {
+  background: snow;
+}
+.bg-g {
+  background: #E6F3F9;
+}
+.th {
+  width: 100%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+.phone {
+  height: 2rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.phone_ico {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+.lock-title{
+    position: absolute;
+    top: 80rpx;
+    left: 122rpx;
+    display:block;
+    font-size: 28rpx;
+    color: #10AEFF;
+    height: 40rpx;
+    line-height: 40rpx 
+}
+.lock-box{
+    width:100vw;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0
+}
+.lock-cav{
+    position: absolute;
+    top: 200rpx;
+    left: 32rpx;
+    z-index: 5
+}

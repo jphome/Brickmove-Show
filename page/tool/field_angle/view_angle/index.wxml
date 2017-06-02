@@ -1,0 +1,5 @@
+<!--page/tool/field_angle/view_angle/index.wxml-->
+
+<view class="">
+<canvas disable-scroll="true" class="angle-cav" canvas-id="CanvasAngle" style="width:100%;height:100%;"></canvas>
+</view>
